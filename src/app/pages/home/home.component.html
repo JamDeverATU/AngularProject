@@ -1,0 +1,43 @@
+<section class="container main-content pt-0">
+    <div class="row pt-2">
+        <div class="col-md-9">
+            <div class="row pb-1" [ngClass]="isSticky ? 'fixedElement' : ''">
+                <div class="col-4">
+                    <select class="form-select" (change)="onLanguageChange()" [(ngModel)]="selectedLanguage">
+                        <option value="0">Select a Language</option>
+                        <option *ngFor="let item of languageList" [value]="item.languageId">{{ item.language }}</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <select class="form-select" (change)="onTopicChange()" [(ngModel)]="selectedTopic">
+                        <option value="0">Select Topic</option>
+                        <ng-container *ngIf="topicList$ | async as topics">
+                            <option *ngFor="let topic of topics" [value]="topic.languageTopicId">{{ topic.topicName }}</option>
+                        </ng-container>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <input type="text" placeholder="Search Questions" [formControl]="questionSearch" />
+                </div>
+            </div>
+            <div class="row">
+                <ng-container *ngIf="questionList.length === 0; else questionListTemplate">
+                    <div class="col-12 text-center pt-5">
+                        <p>Select Any Language to Get Questions</p>
+                    </div>
+                </ng-container>
+                <ng-template #questionListTemplate>
+                    <div class="col-12" *ngFor="let question of questionList">
+                        <app-question-card [question]="question" (onCardClick)="onQuestionClicked($event)"></app-question-card>
+                    </div>
+                </ng-template>
+            </div>
+            <ng-container *ngIf="questionList.length !== 0">
+                <a href="#" class="load-questions"><i class="icon-refresh"></i>Load More Questions</a>
+            </ng-container>
+        </div>
+        <aside class="col-md-3 sidebar">
+            <app-question-count [languageCountList]="questionCountList"></app-question-count>
+        </aside>
+    </div>
+</section>
