@@ -155,7 +155,7 @@ button {
 
 .question h2 {
 	margin: 0 0 10px 101px;
-	color: #0160f8;
+	color: #000000;
 	overflow: hidden;
 	font-size: 22px;
 	font-weight: bold;
@@ -163,7 +163,7 @@ button {
 }
 
 .question h2 a {
-	color: #0160f8;
+	color: #000000;
 }
 
 .question-reply {
@@ -263,8 +263,8 @@ button {
 
 .load-questions:hover {
     color: #fff;
-    background-color: #0055dd;
-    border-color: #0055dd;
+    background-color: #0160f8;
+    border-color: #000000;
 }
 
 .widget {
@@ -281,7 +281,7 @@ button {
 .widget h3.widget_title {
 	margin: -20px 0 20px;
 	font-size: 16px;
-    color: #0160f8;
+    color: #030303;
 	font-weight: bold;
 	padding: 20px 0 10px;
 	border-bottom: 2px solid #dedede;
@@ -327,7 +327,6 @@ p {
     margin-bottom: 0 !important;
 }
 
-/* Bootstrap Classes */
 .form-control {
     display: inline-block;
     width: auto;

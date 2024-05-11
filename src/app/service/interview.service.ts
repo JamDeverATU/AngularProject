@@ -11,8 +11,6 @@ export class InterviewService {
   apiEndPoint: string = "https://freeapi.gerasim.in/api/Interview/";
   apiEndPoint2: string = "https://freeapi.gerasim.in/api/miniproject/";
   
-
-
   constructor(private http: HttpClient) { }
 
   getAllLanguage(): Observable<APIResponsModel> {

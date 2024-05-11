@@ -1,0 +1,15 @@
+<body>
+    <h3>To Study List</h3>
+    <div class="todo-container">
+      <input [(ngModel)]="newNote" id="newNotes" placeholder="Enter your message" class="todo-input">
+      <button (click)="addNote()" class="todo-add-btn">Add Note</button>
+  
+      <div class="todo-list">
+        <h3 *ngFor="let note of notes" class="todo-item">
+          <b class="todo-text">{{ note.description }}</b>
+          <button (click)="deleteNote(note.id)" class="todo-delete-btn">Delete Note</button>
+        </h3>
+      </div>
+    </div>
+  </body>
+  

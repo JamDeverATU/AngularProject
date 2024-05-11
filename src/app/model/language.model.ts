@@ -1,8 +1,6 @@
 export interface ILanguage {
     languageId: number;
     language: string;
-    logo: string;
-    youtubePlayListUrl:string;
 }
 
 export interface APIResponsModel {
@@ -12,12 +10,10 @@ export interface APIResponsModel {
 }
 
 export interface LanguageTopic {
-
     languageTopicId: number;
     languageId: number;
     topicName: string;
     orderNo: number;
-    youtubeVideoUrl: string;
 
 }
 
